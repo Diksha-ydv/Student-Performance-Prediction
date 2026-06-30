@@ -3,10 +3,12 @@ import numpy as np
 import sys 
 import os 
 
+from src.components import data_transformation
 from src.logger import logging
 from src.exception import CustomException
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
+from src.components.data_transformation import DataTransformation,DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -41,7 +43,8 @@ if __name__=="__main__":
     data_ingestion = DataIngestion()
     train_data,test_data = data_ingestion.initiate_data_path()
 
-
+    data_transform = DataTransformation()
+    train_arr,test_arr,_ = data_transform.train_test_transform(train_data,test_data)
 
 
     
