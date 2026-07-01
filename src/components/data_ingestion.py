@@ -3,12 +3,12 @@ import numpy as np
 import sys 
 import os 
 
-from src.components import data_transformation
 from src.logger import logging
 from src.exception import CustomException
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 from src.components.data_transformation import DataTransformation,DataTransformationConfig
+from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -47,4 +47,6 @@ if __name__=="__main__":
     train_arr,test_arr,_ = data_transform.train_test_transform(train_data,test_data)
 
 
-    
+    model_trainer = ModelTrainer()
+    r2_square = model_trainer.model_train(train_arr,test_arr)
+    print(f"r2 score is : {r2_square}")
