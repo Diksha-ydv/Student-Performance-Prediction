@@ -3,7 +3,7 @@ numpy
 matplotlib
 seaborn 
 scikit-learn
-#-e .
+-e .
 catboost
 xgboost
 matplotlib-inline
