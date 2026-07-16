@@ -1,12 +1,12 @@
-pandas 
-numpy 
+pandas
+numpy
 matplotlib
-seaborn 
-scikit-learn
--e .
+seaborn
+scikit-learn==1.6.1
 catboost
 xgboost
 matplotlib-inline
 IPython
 flask
 gunicorn
+-e .
