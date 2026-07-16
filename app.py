@@ -5,11 +5,7 @@ from src.pipeline.predict_pipeline import CustomData, prediction_pipeline
 application = Flask(__name__)
 app = application
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route("/predict_data",methods = ["GET","POST"])
+@app.route("/",methods = ["GET","POST"])
 def predict_datapoint():
     if request.method=="GET":
         return render_template("home.html")
